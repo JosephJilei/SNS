@@ -16,11 +16,15 @@
 			return (typeof id ==='string') ? document.getElementById(id) : id;
 		}
 		var newConfig={
-			domian:'',
+			//分享URL
 			sharedomain:'',
+			//分享标题
 			title:'',
-			description:'中国人',
+			//分享文案
+			description:'',
+			//分享图片相对路径
 			pic:'',
+			//分享新开窗口 默认_blank
 			w:''
 		};
 		SNS.init(newConfig);
