@@ -1,49 +1,42 @@
 var  SNS ={
 	defaultConfig:{
-		//网址
-		domian:"http://s39h.medialand.cn/",
-		//分享网址
-		sharedomain:'http://campaigns.sonymobile.com/cn/s39h/',
-		//标题
-		title:"随你听•乐不停",
-		//描述
-		description:"#随你听•乐不停#“乐”够了没？五寸大屏由你玩，四核动力任你high，还有三种色彩选择，双卡双待的便利，以及一系列免费音乐特权！超越想象的乐趣，尽在@索尼Xperia C S39h的无限音乐酷玩世界！想体验更多？猛戳",
-		//图片
-		pic : "images/share.jpg",
-		//分享新窗口
-		w:"_blank"
+		sharedomain:'',
+		title:'',
+		description:'',
+		pic : '',
+		w:'_blank'
 	},
 	share:function(type){
 		var shareurl,sharetitle,sharepic,finalurl="";
 		switch(type){
 			case 1:
-				shareurl="http://service.weibo.com/share/share.php?url="+encodeURIComponent(this.defaultConfig.sharedomain);
+				shareurl="http://service.weibo.com/share/share.php?url="+encodeURIComponent(this.defaultConfig.sharesharedomain);
 				sharetitle="&title="+encodeURIComponent(this.defaultConfig.description);
-				sharepic="&pic="+encodeURIComponent(this.defaultConfig.domian+this.defaultConfig.pic);
+				sharepic="&pic="+encodeURIComponent(this.defaultConfig.sharedomain+this.defaultConfig.pic);
 				finalurl=shareurl+sharetitle+sharepic;
 			break;
 			case 2:
-				shareurl="http://share.v.t.qq.com/index.php?c=share&a=index&url="+encodeURIComponent(this.defaultConfig.sharedomain);
+				shareurl="http://share.v.t.qq.com/index.php?c=share&a=index&url="+encodeURIComponent(this.defaultConfig.sharesharedomain);
 				sharetitle="&title="+encodeURIComponent(this.defaultConfig.description);
-				sharepic="&pic="+encodeURIComponent(this.defaultConfig.domian+this.defaultConfig.pic);
+				sharepic="&pic="+encodeURIComponent(this.defaultConfig.sharedomain+this.defaultConfig.pic);
 				finalurl=shareurl+sharetitle+sharepic;
 			break;
 			case 3:
-				shareurl="http://widget.renren.com/dialog/share?resourceUrl="+encodeURIComponent(this.defaultConfig.sharedomain);
-				sharetitle="&title="+encodeURIComponent(this.title)+"&description="+encodeURIComponent(this.defaultConfig.description+""+this.defaultConfig.domian);
-				sharepic="&pic="+encodeURIComponent(this.defaultConfig.domian+this.defaultConfig.pic);
+				shareurl="http://widget.renren.com/dialog/share?resourceUrl="+encodeURIComponent(this.defaultConfig.sharesharedomain);
+				sharetitle="&title="+encodeURIComponent(this.title)+"&description="+encodeURIComponent(this.defaultConfig.description+""+this.defaultConfig.sharedomain);
+				sharepic="&pic="+encodeURIComponent(this.defaultConfig.sharedomain+this.defaultConfig.pic);
 				finalurl=shareurl+sharetitle+sharepic;
 			break;
 			case 4:
-				shareurl="http://www.kaixin001.com/rest/records.php?url="+encodeURIComponent(this.defaultConfig.sharedomain);
+				shareurl="http://www.kaixin001.com/rest/records.php?url="+encodeURIComponent(this.defaultConfig.sharesharedomain);
 				sharetitle="&content="+encodeURIComponent(this.defaultConfig.description);
-				sharepic="&pic="+encodeURIComponent(this.defaultConfig.domian+this.defaultConfig.pic);
+				sharepic="&pic="+encodeURIComponent(this.defaultConfig.sharedomain+this.defaultConfig.pic);
 				finalurl=shareurl+sharetitle+sharepic+"&starid=0&aid=0&style=11&stime=&sig=";
 			break;
 			case 5:
-				shareurl="http://shuo.douban.com/!service/share?href="+encodeURIComponent(this.defaultConfig.sharedomain);
+				shareurl="http://shuo.douban.com/!service/share?href="+encodeURIComponent(this.defaultConfig.sharesharedomain);
 				sharetitle="&name="+encodeURIComponent(this.defaultConfig.title)+"&text="+encodeURIComponent(this.defaultConfig.description);
-				sharepic="&image="+encodeURIComponent(this.defaultConfig.domian+this.defaultConfig.pic);
+				sharepic="&image="+encodeURIComponent(this.defaultConfig.sharedomain+this.defaultConfig.pic);
 				finalurl=shareurl+sharetitle+sharepic+"&starid=0&aid=0&style=11&stime=&sig=";
 			break;
 		}
